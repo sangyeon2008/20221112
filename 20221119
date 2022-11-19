@@ -1,0 +1,26 @@
+#소수 만들기 12977
+
+def isprime(n):
+    if n < 1 : return False
+#소수일 경우 True 아닐경우 False를 리턴한다.
+    for i in range(2,n):
+        if n % i ==0:
+            return False
+    return True
+
+
+def solution(nums):
+    cnt = 0
+    #nums에서 3개의 수들을 더해준다.
+    for i in range(nums):
+        n = nums[i] + nums[i-1] + nums[i+1]
+
+    #더한 숫자가 소수인지를 판결한다. #함수(is prime)로 만들어서 확인
+    #소수일 경우 정답의 개수를 증가시켜준다.
+    if isprime(n):
+        cnt +=1
+    return cnt
+
+
+nums = [1,2,3,4]
+print(solution(nums))
